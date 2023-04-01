@@ -105,7 +105,9 @@ def gaussian_elimination(A: np.array, b: np.array):
 ###### Exercise 4: LU Factorization ######
 def LU_factorization(mat: np.array):
     # matrix determinant. It has to be a square matrix. Non-square matrix does not have det
-    print(f"{np.linalg.det(mat)}\n")
+    det = np.linalg.det(mat)
+    print("%.5f" % det)
+    print()
 
     # print(np.shape(mat)) # gives (rows, columns)
     # print(len(mat)) # gives the number of rows same as mat.shape[0]
@@ -195,13 +197,13 @@ print("%.5f" % approximate_rungeKutta_solution)
 print()
 
 # Exercise 3 Gaussian elimination with backward substitution
-A = np.array([[2, -1, 1], [1, 3, 1], [-1, 5, 4]])
+A = np.array([[2, -1, 1], [1, 3, 1], [-1, 5, 4]], dtype=np.double)
 b = np.array([6, 0, -3])  # b is a row vector but it should be a column vector
 x = gaussian_elimination(A, b)
 print(f"{x}\n")
 
 # Exercise 4 LU Factorization
-mat = np.array([[1, 1, 0, 3], [2, 1, -1, 1], [3, -1, -1, 2], [-1, 2, 3, -1]])
+mat = np.array([[1, 1, 0, 3], [2, 1, -1, 1], [3, -1, -1, 2], [-1, 2, 3, -1]], dtype=np.float64)
 LU_factorization(mat)
 
 # Exercise 5 Diagonally Dominant Matrix
